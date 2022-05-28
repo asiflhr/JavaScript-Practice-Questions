@@ -806,3 +806,48 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+16. ### What is a pure function
+
+    A **Pure function** is a function where the return value is only determined by its arguments without any side effects. i.e, If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
+
+    Let's take an example to see the difference between pure and impure functions,
+
+    ```javascript
+    //Impure
+    let numberArray = [];
+    const impureAddNumber = (number) => numberArray.push(number);
+    //Pure
+    const pureAddNumber = (number) => (argNumberArray) =>
+      argNumberArray.concat([number]);
+
+    //Display the results
+    console.log(impureAddNumber(6)); // returns 1
+    console.log(numberArray); // returns [6]
+    console.log(pureAddNumber(7)(numberArray)); // returns [6, 7]
+    console.log(numberArray); // returns [6]
+    ```
+
+    As per the above code snippets, the **Push** function is impure itself by altering the array and returning a push number index independent of the parameter value. . Whereas **Concat** on the other hand takes the array and concatenates it with the other array producing a whole new array without side effects. Also, the return value is a concatenation of the previous array.
+
+    Remember that Pure functions are important as they simplify unit testing without any side effects and no need for dependency injection. They also avoid tight coupling and make it harder to break your application by not having any side effects. These principles are coming together with **Immutability** concept of ES6 by giving preference to **const** over **let** usage.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+17. ### What is the purpose of the let keyword
+
+    The `let` statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the `var` keyword used to define a variable globally, or locally to an entire function regardless of block scope.
+
+    Let's take an example to demonstrate the usage,
+
+    ```javascript
+    let counter = 30;
+    if (counter === 30) {
+      let counter = 31;
+      console.log(counter); // 31
+    }
+    console.log(counter); // 30 (because the variable in if block won't exist here)
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
