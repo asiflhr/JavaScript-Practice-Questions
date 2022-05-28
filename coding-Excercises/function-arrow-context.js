@@ -12,3 +12,7 @@ function User(name, age){
         };
     }
 }
+
+let user = new User('John', 30);
+let profile = user.getProfile();
+profile(); // I'm John and I'm 30 years old.
