@@ -921,4 +921,43 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-    
+21. ### What is the Temporal Dead Zone
+
+    The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a `let` or `const` variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
+
+    Let's see this behavior with an example,
+
+    ```javascript
+    function somemethod() {
+      console.log(counter1); // undefined
+      console.log(counter2); // ReferenceError
+      var counter1 = 1;
+      let counter2 = 2;
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+22. ### What is IIFE(Immediately Invoked Function Expression)
+
+    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
+
+    ```javascript
+    (function () {
+      // logic here
+    })();
+    ```
+
+    The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
+
+    ```javascript
+    (function () {
+      var message = "IIFE";
+      console.log(message);
+    })();
+    console.log(message); //Error: message is not defined
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
