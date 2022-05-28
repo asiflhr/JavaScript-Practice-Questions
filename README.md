@@ -1554,3 +1554,168 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+61. ### What are the main rules of promise
+
+    A promise must follow a specific set of rules,
+
+    1. A promise is an object that supplies a standard-compliant `.then()` method
+    2. A pending promise may transition into either fulfilled or rejected state
+    3. A fulfilled or rejected promise is settled and it must not transition into any other state.
+    4. Once a promise is settled, the value must not change.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+62. ### What is callback in callback
+
+    You can nest one callback inside in another callback to execute the actions sequentially one by one. This is known as callbacks in callbacks.
+
+    ```javascript
+    loadScript("/script1.js", function (script) {
+      console.log("first script is loaded");
+
+      loadScript("/script2.js", function (script) {
+        console.log("second script is loaded");
+
+        loadScript("/script3.js", function (script) {
+          console.log("third script is loaded");
+          // after all scripts are loaded
+        });
+      });
+    });
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+63. ### What is promise chaining
+
+    The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. Let's take an example of promise chaining for calculating the final result,
+
+    ```javascript
+    new Promise(function (resolve, reject) {
+      setTimeout(() => resolve(1), 1000);
+    })
+      .then(function (result) {
+        console.log(result); // 1
+        return result * 2;
+      })
+      .then(function (result) {
+        console.log(result); // 2
+        return result * 3;
+      })
+      .then(function (result) {
+        console.log(result); // 6
+        return result * 4;
+      });
+    ```
+
+    In the above handlers, the result is passed to the chain of .then() handlers with the below work flow,
+
+    1. The initial promise resolves in 1 second,
+    2. After that `.then` handler is called by logging the result(1) and then return a promise with the value of result \* 2.
+    3. After that the value passed to the next `.then` handler by logging the result(2) and return a promise with result \* 3.
+    4. Finally the value passed to the last `.then` handler by logging the result(6) and return a promise with result \* 4.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+64. ### What is promise.all
+
+    Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected. For example, the syntax of promise.all method is below,
+
+    ```javascript
+    Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))
+    ```
+
+    **Note:** Remember that the order of the promises(output the result) is maintained as per input order.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+65. ### What is the purpose of the race method in promise
+
+    Promise.race() method will return the promise instance which is firstly resolved or rejected. Let's take an example of race() method where promise2 is resolved first
+
+    ```javascript
+    var promise1 = new Promise(function (resolve, reject) {
+      setTimeout(resolve, 500, "one");
+    });
+    var promise2 = new Promise(function (resolve, reject) {
+      setTimeout(resolve, 100, "two");
+    });
+
+    Promise.race([promise1, promise2]).then(function (value) {
+      console.log(value); // "two" // Both promises will resolve, but promise2 is faster
+    });
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+66. ### What is a strict mode in javascript
+
+    Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression `"use strict";` instructs the browser to use the javascript code in the Strict mode.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+67. ### Why do you need strict mode
+
+    Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+68. ### How do you declare strict mode
+
+    The strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+    If declared at the beginning of a script, it has global scope.
+
+    ```javascript
+    "use strict";
+    x = 3.14; // This will cause an error because x is not declared
+    ```
+
+    and if you declare inside a function, it has local scope
+
+    ```javascript
+    x = 3.14; // This will not cause an error.
+    myFunction();
+
+    function myFunction() {
+      "use strict";
+      y = 3.14; // This will cause an error
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+69. ### What is the purpose of double exclamation
+
+    The double exclamation or negation(!!) ensures the resulting type is a boolean. If it was falsey (e.g. 0, null, undefined, etc.), it will be false, otherwise, true.
+    For example, you can test IE version using this expression as below,
+
+    ```javascript
+    let isIE8 = false;
+    isIE8 = !!navigator.userAgent.match(/MSIE 8.0/);
+    console.log(isIE8); // returns true or false
+    ```
+
+    If you don't use this expression then it returns the original value.
+
+    ```javascript
+    console.log(navigator.userAgent.match(/MSIE 8.0/)); // returns either an Array or null
+    ```
+
+    **Note:** The expression !! is not an operator, but it is just twice of ! operator.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+70. ### What is the purpose of the delete operator
+
+    The delete keyword is used to delete the property as well as its value.
+
+    ```javascript
+    var user = { name: "John", age: 20 };
+    delete user.age;
+
+    console.log(user); // {name: "John"}
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
