@@ -673,3 +673,29 @@
    **[⬆ Back to Top](#table-of-contents)**
 
 
+7. ### What is the difference between slice and splice
+
+   Some of the major difference in a tabular form
+
+   | Slice                                        | Splice                                          |
+   | -------------------------------------------- | ----------------------------------------------- |
+   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)            |
+   | Returns the subset of original array         | Returns the deleted elements as array           |
+   | Used to pick the elements from array         | Used to insert or delete elements to/from array |
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+8. ### How do you compare Object and Map
+
+   **Objects** are similar to **Maps** in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Due to this reason, Objects have been used as Maps historically. But there are important differences that make using a Map preferable in certain cases.
+
+   1. The keys of an Object are Strings and Symbols, whereas they can be any value for a Map, including functions, objects, and any primitive.
+   2. The keys in Map are ordered while keys added to Object are not. Thus, when iterating over it, a Map object returns keys in order of insertion.
+   3. You can get the size of a Map easily with the size property, while the number of properties in an Object must be determined manually.
+   4. A Map is an iterable and can thus be directly iterated, whereas iterating over an Object requires obtaining its keys in some fashion and iterating over them.
+   5. An Object has a prototype, so there are default keys in the map that could collide with your keys if you're not careful. As of ES5 this can be bypassed by using map = Object.create(null), but this is seldom done.
+   6. A Map may perform better in scenarios involving frequent addition and removal of key pairs.
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+
