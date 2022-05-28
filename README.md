@@ -1462,3 +1462,95 @@
 
 
 
+55. ### Why do we need callbacks
+
+    The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events.
+    Let's take an example with the first function invoking an API call(simulated by setTimeout) and the next function which logs the message.
+
+    ```javascript
+    function firstFunction() {
+      // Simulate a code delay
+      setTimeout(function () {
+        console.log("First function called");
+      }, 1000);
+    }
+    function secondFunction() {
+      console.log("Second function called");
+    }
+    firstFunction();
+    secondFunction();
+
+    Output;
+    // Second function called
+    // First function called
+    ```
+
+    As observed from the output, javascript didn't wait for the response of the first function and the remaining code block got executed. So callbacks are used in a way to make sure that certain code doesn’t execute until the other code finishes execution.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+56. ### What is a callback hell
+
+    Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read and debug when dealing with asynchronous logic. The callback hell looks like below,
+
+    ```javascript
+    async1(function(){
+        async2(function(){
+            async3(function(){
+                async4(function(){
+                    ....
+                });
+            });
+        });
+    });
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+57. ### What are server-sent events
+
+    Server-sent events (SSE) is a server push technology enabling a browser to receive automatic updates from a server via HTTP connection without resorting to polling. These are a one way communications channel - events flow from server to client only. This has been used in Facebook/Twitter updates, stock price updates, news feeds etc.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+58. ### How do you receive server-sent event notifications
+
+    The EventSource object is used to receive server-sent event notifications. For example, you can receive messages from server as below,
+
+    ```javascript
+    if (typeof EventSource !== "undefined") {
+      var source = new EventSource("sse_generator.js");
+      source.onmessage = function (event) {
+        document.getElementById("output").innerHTML += event.data + "<br>";
+      };
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+59. ### How do you check browser support for server-sent events
+
+    You can perform browser support for server-sent events before using it as below,
+
+    ```javascript
+    if (typeof EventSource !== "undefined") {
+      // Server-sent events supported. Let's have some code here!
+    } else {
+      // No server-sent events supported
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+60. ### What are the events available for server sent events
+
+    Below are the list of events available for server sent events
+    | Event | Description |
+    |---- | ---------
+    | onopen | It is used when a connection to the server is opened |
+    | onmessage | This event is used when a message is received |
+    | onerror | It happens when an error occurs|
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
