@@ -1201,4 +1201,49 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-    
+    40. ### How do you delete a cookie
+
+    You can delete a cookie by setting the expiry date as a passed date. You don't need to specify a cookie value in this case.
+    For example, you can delete a username cookie in the current page as below.
+
+    ```javascript
+    document.cookie =
+      "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
+    ```
+
+    **Note:** You should define the cookie path option to ensure that you delete the right cookie. Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+41. ### What are the differences between cookie, local storage and session storage
+
+    Below are some of the differences between cookie, local storage and session storage,
+
+    | Feature                           | Cookie                             | Local storage    | Session storage     |
+    | --------------------------------- | ---------------------------------- | ---------------- | ------------------- |
+    | Accessed on client or server side | Both server-side & client-side     | client-side only | client-side only    |
+    | Lifetime                          | As configured using Expires option | until deleted    | until tab is closed |
+    | SSL support                       | Supported                          | Not supported    | Not supported       |
+    | Maximum data size                 | 4KB                                | 5 MB             | 5MB                 |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+42. ### What is the main difference between localStorage and sessionStorage
+
+    LocalStorage is the same as SessionStorage but it persists the data even when the browser is closed and reopened(i.e it has no expiration time) whereas in sessionStorage data gets cleared when the page session ends.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+43. ### How do you access web storage
+
+    The Window object implements the `WindowLocalStorage` and `WindowSessionStorage` objects which has `localStorage`(window.localStorage) and `sessionStorage`(window.sessionStorage) properties respectively. These properties create an instance of the Storage object, through which data items can be set, retrieved and removed for a specific domain and storage type (session or local).
+    For example, you can read and write on local storage objects as below
+
+    ```javascript
+    localStorage.setItem("logo", document.getElementById("logo").value);
+    localStorage.getItem("logo");
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
