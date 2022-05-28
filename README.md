@@ -1005,4 +1005,69 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-    
+    25. ### What is Hoisting
+
+    Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
+    Let's take a simple example of variable hoisting,
+
+    ```javascript
+    console.log(message); //output : undefined
+    var message = "The variable Has been hoisted";
+    ```
+
+    The above code looks like as below to the interpreter,
+
+    ```javascript
+    var message;
+    console.log(message);
+    message = "The variable Has been hoisted";
+    ```
+
+    In the same fashion, function declarations are hoisted too
+
+    ```javascript
+    message("Good morning"); //Good morning
+
+    function message(name) {
+      console.log(name);
+    }
+    ```
+
+    This hoisting makes functions to be safely used in code before they are declared.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+26. ### What are classes in ES6
+
+    In ES6, Javascript classes are primarily syntactic sugar over JavaScript’s existing prototype-based inheritance.
+    For example, the prototype based inheritance written in function expression as below,
+
+    ```javascript
+    function Bike(model, color) {
+      this.model = model;
+      this.color = color;
+    }
+
+    Bike.prototype.getDetails = function () {
+      return this.model + " bike has" + this.color + " color";
+    };
+    ```
+
+    Whereas ES6 classes can be defined as an alternative
+
+    ```javascript
+    class Bike {
+      constructor(color, model) {
+        this.color = color;
+        this.model = model;
+      }
+
+      getDetails() {
+        return this.model + " bike has" + this.color + " color";
+      }
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
