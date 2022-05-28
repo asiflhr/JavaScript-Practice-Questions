@@ -1247,3 +1247,86 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+44. ### What are the methods available on session storage
+
+    The session storage provided methods for reading, writing and clearing the session data
+
+    ```javascript
+    // Save data to sessionStorage
+    sessionStorage.setItem("key", "value");
+
+    // Get saved data from sessionStorage
+    let data = sessionStorage.getItem("key");
+
+    // Remove saved data from sessionStorage
+    sessionStorage.removeItem("key");
+
+    // Remove all saved data from sessionStorage
+    sessionStorage.clear();
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+45. ### What is a storage event and its event handler
+
+    The StorageEvent is an event that fires when a storage area has been changed in the context of another document. Whereas onstorage property is an EventHandler for processing storage events.
+    The syntax would be as below
+
+    ```javascript
+    window.onstorage = functionRef;
+    ```
+
+    Let's take the example usage of onstorage event handler which logs the storage key and it's values
+
+    ```javascript
+    window.onstorage = function (e) {
+      console.log(
+        "The " +
+          e.key +
+          " key has been changed from " +
+          e.oldValue +
+          " to " +
+          e.newValue +
+          "."
+      );
+    };
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+46. ### Why do you need web storage
+
+    Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance. Also, the information is never transferred to the server. Hence this is a more recommended approach than Cookies.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+47. ### How do you check web storage browser support
+
+    You need to check browser support for localStorage and sessionStorage before using web storage,
+
+    ```javascript
+    if (typeof Storage !== "undefined") {
+      // Code for localStorage/sessionStorage.
+    } else {
+      // Sorry! No Web Storage support..
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+48. ### How do you check web workers browser support
+
+    You need to check browser support for web workers before using it
+
+    ```javascript
+    if (typeof Worker !== "undefined") {
+      // code for Web worker support.
+    } else {
+      // Sorry! No Web Worker support..
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+    
