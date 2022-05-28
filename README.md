@@ -731,3 +731,78 @@
    **[⬆ Back to Top](#table-of-contents)**
 
 
+10. ### What are lambda or arrow functions
+
+    An arrow function is a shorter syntax for a function expression and does not have its own **this, arguments, super, or new.target**. These functions are best suited for non-method functions, and they cannot be used as constructors.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+11. ### What is a first class function
+
+    In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
+
+    For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
+
+    ```javascript
+    const handler = () => console.log("This is a click handler function");
+    document.addEventListener("click", handler);
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+12. ### What is a first order function
+
+    First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
+
+    ```javascript
+    const firstOrder = () => console.log("I am a first order function!");
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+13. ### What is a higher order function
+
+    Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+
+    ```javascript
+    const firstOrderFunc = () =>
+      console.log("Hello, I am a First order function");
+    const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
+    higherOrder(firstOrderFunc);
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+14. ### What is a unary function
+
+    Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for a single argument accepted by a function.
+
+    Let us take an example of unary function,
+
+    ```javascript
+    const unaryFunction = (a) => console.log(a + 10); // Add 10 to the given argument and display the value
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+15. ### What is the currying function
+
+    Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument. Currying is named after a mathematician **Haskell Curry**. By applying currying, a n-ary function turns it into a unary function.
+
+    Let's take an example of n-ary function and how it turns into a currying function,
+
+    ```javascript
+    const multiArgFunction = (a, b, c) => a + b + c;
+    console.log(multiArgFunction(1, 2, 3)); // 6
+
+    const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+    curryUnaryFunction(1); // returns a function: b => c =>  1 + b + c
+    curryUnaryFunction(1)(2); // returns a function: c => 3 + c
+    curryUnaryFunction(1)(2)(3); // returns the number 6
+    ```
+
+    Curried functions are great to improve **code reusability** and **functional composition**.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
