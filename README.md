@@ -961,3 +961,48 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+23. ### How do you decode or encode a URL in JavaScript?
+
+    `encodeURI()` function is used to encode an URL. This function requires a URL string as a parameter and return that encoded string.
+    `decodeURI()` function is used to decode an URL. This function requires an encoded URL string as parameter and return that decoded string.
+
+    **Note:** If you want to encode characters such as `/ ? : @ & = + $ #` then you need to use `encodeURIComponent()`.
+
+    ```javascript
+    let uri = "employeeDetails?name=john&occupation=manager";
+    let encoded_uri = encodeURI(uri);
+    let decoded_uri = decodeURI(encoded_uri);
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+24. ### What is memoization
+
+    Memoization is a programming technique which attempts to increase a function’s performance by caching its previously computed results. Each time a memoized function is called, its parameters are used to index the cache. If the data is present, then it can be returned, without executing the entire function. Otherwise the function is executed and then the result is added to the cache.
+    Let's take an example of adding function with memoization,
+
+    ```javascript
+    const memoizAddition = () => {
+      let cache = {};
+      return (value) => {
+        if (value in cache) {
+          console.log("Fetching from cache");
+          return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+        } else {
+          console.log("Calculating result");
+          let result = value + 20;
+          cache[value] = result;
+          return result;
+        }
+      };
+    };
+    // returned function from memoizAddition
+    const addition = memoizAddition();
+    console.log(addition(20)); //output: 40 calculated
+    console.log(addition(20)); //output: 40 cached
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+    
