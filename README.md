@@ -2130,3 +2130,75 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+104. ### What are the steps involved in return false usage
+
+     The return false statement in event handlers performs the below steps,
+
+     1. First it stops the browser's default action or behaviour.
+     2. It prevents the event from propagating the DOM
+     3. Stops callback execution and returns immediately when called.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+105. ### What is BOM
+
+     The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. It consists of the objects navigator, history, screen, location and document which are children of the window. The Browser Object Model is not standardized and can change based on different browsers.
+
+     ![Screenshot](images/bom.png)
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+106. ### What is the use of setTimeout
+
+     The setTimeout() method is used to call a function or evaluate an expression after a specified number of milliseconds. For example, let's log a message after 2 seconds using setTimeout method,
+
+     ```javascript
+     setTimeout(function () {
+       console.log("Good morning");
+     }, 2000);
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+107. ### What is the use of setInterval
+
+     The setInterval() method is used to call a function or evaluate an expression at specified intervals (in milliseconds). For example, let's log a message after 2 seconds using setInterval method,
+
+     ```javascript
+     setInterval(function () {
+       console.log("Good morning");
+     }, 2000);
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+108. ### Why is JavaScript treated as Single threaded
+
+     JavaScript is a single-threaded language. Because the language specification does not allow the programmer to write code so that the interpreter can run parts of it in parallel in multiple threads or processes. Whereas languages like java, go, C++ can make multi-threaded and multi-process programs.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+109. ### What is an event delegation
+
+     Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it.
+
+     For example, if you wanted to detect field changes in inside a specific form, you can use event delegation technique,
+
+     ```javascript
+     var form = document.querySelector("#registration-form");
+
+     // Listen for changes to fields inside the form
+     form.addEventListener(
+       "input",
+       function (event) {
+         // Log the field that was changed
+         console.log(event.target);
+       },
+       false
+     );
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
+     
