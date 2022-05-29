@@ -2819,3 +2819,79 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+148. ### How do you define JSON arrays
+
+     JSON arrays are written inside square brackets and arrays contain javascript objects. For example, the JSON array of users would be as below,
+
+     ```javascript
+     "users":[
+       {"firstName":"John", "lastName":"Abrahm"},
+       {"firstName":"Anna", "lastName":"Smith"},
+       {"firstName":"Shane", "lastName":"Warn"}
+     ]
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+149. ### How do you generate random integers
+
+     You can use Math.random() with Math.floor() to return random integers. For example, if you want generate random integers between 1 to 10, the multiplication factor should be 10,
+
+     ```javascript
+     Math.floor(Math.random() * 10) + 1; // returns a random integer from 1 to 10
+     Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100
+     ```
+
+     **Note:** Math.random() returns a random number between 0 (inclusive), and 1 (exclusive)
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+150. ### Can you write a random integers function to print integers with in a range
+
+     Yes, you can create a proper random function to return a random number between min and max (both included)
+
+     ```javascript
+     function randomInteger(min, max) {
+       return Math.floor(Math.random() * (max - min + 1)) + min;
+     }
+     randomInteger(1, 100); // returns a random integer from 1 to 100
+     randomInteger(1, 1000); // returns a random integer from 1 to 1000
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+151. ### What is tree shaking
+
+     Tree shaking is a form of dead code elimination. It means that unused modules will not be included in the bundle during the build process and for that it relies on the static structure of ES2015 module syntax,( i.e. import and export). Initially this has been popularized by the ES2015 module bundler `rollup`.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+152. ### What is the need of tree shaking
+
+     Tree Shaking can significantly reduce the code size in any application. i.e, The less code we send over the wire the more performant the application will be. For example, if we just want to create a “Hello World” Application using SPA frameworks then it will take around a few MBs, but by tree shaking it can bring down the size to just a few hundred KBs. Tree shaking is implemented in Rollup and Webpack bundlers.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+153. ### Is it recommended to use eval
+
+     No, it allows arbitrary code to be run which causes a security problem. As we know that the eval() function is used to run text as code. In most of the cases, it should not be necessary to use it.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+154. ### What is a Regular Expression
+
+     A regular expression is a sequence of characters that forms a search pattern. You can use this search pattern for searching data in a text. These can be used to perform all types of text search and text replace operations. Let's see the syntax format now,
+
+     ```javascript
+     /pattern/modifiers;
+     ```
+
+     For example, the regular expression or search pattern with case-insensitive username would be,
+
+     ```javascript
+     /John/i;
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
