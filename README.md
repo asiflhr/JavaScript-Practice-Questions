@@ -3305,3 +3305,60 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+184. ### What are various operators supported by javascript
+
+     An operator is capable of manipulating(mathematical and logical computations) a certain value or operand. There are various operators supported by JavaScript as below,
+
+     1. **Arithmetic Operators:** Includes + (Addition),– (Subtraction), \* (Multiplication), / (Division), % (Modulus), + + (Increment) and – – (Decrement)
+     2. **Comparison Operators:** Includes = =(Equal),!= (Not Equal), ===(Equal with type), > (Greater than),> = (Greater than or Equal to),< (Less than),<= (Less than or Equal to)
+     3. **Logical Operators:** Includes &&(Logical AND),||(Logical OR),!(Logical NOT)
+     4. **Assignment Operators:** Includes = (Assignment Operator), += (Add and Assignment Operator), – = (Subtract and Assignment Operator), \*= (Multiply and Assignment), /= (Divide and Assignment), %= (Modules and Assignment)
+     5. **Ternary Operators:** It includes conditional(: ?) Operator
+     6. **typeof Operator:** It uses to find type of variable. The syntax looks like `typeof variable`
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+185. ### What is a rest parameter
+
+     Rest parameter is an improved way to handle function parameters which allows us to represent an indefinite number of arguments as an array. The syntax would be as below,
+
+     ```javascript
+     function f(a, b, ...theArgs) {
+       // ...
+     }
+     ```
+
+     For example, let's take a sum example to calculate on dynamic number of parameters,
+
+     ```javascript
+     function total(…args){
+     let sum = 0;
+     for(let i of args){
+     sum+=i;
+     }
+     return sum;
+     }
+     console.log(fun(1,2)); //3
+     console.log(fun(1,2,3)); //6
+     console.log(fun(1,2,3,4)); //13
+     console.log(fun(1,2,3,4,5)); //15
+     ```
+
+     **Note:** Rest parameter is added in ES2015 or ES6
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+186. ### What happens if you do not use rest parameter as a last argument
+
+     The rest parameter should be the last argument, as its job is to collect all the remaining arguments into an array. For example, if you define a function like below it doesn’t make any sense and will throw an error.
+
+     ```javascript
+     function someFunc(a,…b,c){
+     //You code goes here
+     return;
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
