@@ -2662,3 +2662,88 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+138. ### How do you define multiline strings
+
+     You can define multiline string literals using the '\\' character followed by line terminator.
+
+     ```javascript
+     var str =
+       "This is a \
+     very lengthy \
+     sentence!";
+     ```
+
+     But if you have a space after the '\\' character, the code will look exactly the same, but it will raise a SyntaxError.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+139. ### What is an app shell model
+
+     An application shell (or app shell) architecture is one way to build a Progressive Web App that reliably and instantly loads on your users' screens, similar to what you see in native applications. It is useful for getting some initial HTML to the screen fast without a network.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+140. ### Can we define properties for functions
+
+     Yes, We can define properties for functions because functions are also objects.
+
+     ```javascript
+     fn = function (x) {
+       //Function code goes here
+     };
+
+     fn.name = "John";
+
+     fn.profile = function (y) {
+       //Profile code goes here
+     };
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+141. ### What is the way to find the number of parameters expected by a function
+
+     You can use `function.length` syntax to find the number of parameters expected by a function. Let's take an example of `sum` function to calculate the sum of numbers,
+
+     ```javascript
+     function sum(num1, num2, num3, num4) {
+       return num1 + num2 + num3 + num4;
+     }
+     sum.length; // 4 is the number of parameters expected.
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+142. ### What is a polyfill
+
+     A polyfill is a piece of JS code used to provide modern functionality on older browsers that do not natively support it. For example, Silverlight plugin polyfill can be used to mimic the functionality of an HTML Canvas element on Microsoft Internet Explorer 7.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+143. ### What are break and continue statements
+
+     The break statement is used to "jump out" of a loop. i.e, It breaks the loop and continues executing the code after the loop.
+
+     ```javascript
+     for (i = 0; i < 10; i++) {
+       if (i === 5) {
+         break;
+       }
+       text += "Number: " + i + "<br>";
+     }
+     ```
+
+     The continue statement is used to "jump over" one iteration in the loop. i.e, It breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+     ```javascript
+     for (i = 0; i < 10; i++) {
+       if (i === 5) {
+         continue;
+       }
+       text += "Number: " + i + "<br>";
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
