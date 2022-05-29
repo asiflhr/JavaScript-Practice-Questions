@@ -2201,4 +2201,63 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
-     
+     110. ### What is ECMAScript
+
+     ECMAScript is the scripting language that forms the basis of JavaScript. ECMAScript standardized by the ECMA International standards organization in the ECMA-262 and ECMA-402 specifications. The first edition of ECMAScript was released in 1997.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+111. ### What is JSON
+
+     JSON (JavaScript Object Notation) is a lightweight format that is used for data interchanging. It is based on a subset of JavaScript language in the way objects are built in JavaScript.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+112. ### What are the syntax rules of JSON
+
+     Below are the list of syntax rules of JSON
+
+     1. The data is in name/value pairs
+     2. The data is separated by commas
+     3. Curly braces hold objects
+     4. Square brackets hold arrays
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+113. ### What is the purpose JSON stringify
+
+     When sending data to a web server, the data has to be in a string format. You can achieve this by converting JSON object into a string using stringify() method.
+
+     ```javascript
+     var userJSON = { name: "John", age: 31 };
+     var userString = JSON.stringify(userJSON);
+     console.log(userString); //"{"name":"John","age":31}"
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+114. ### How do you parse JSON string
+
+     When receiving the data from a web server, the data is always in a string format. But you can convert this string value to a javascript object using parse() method.
+
+     ```javascript
+     var userString = '{"name":"John","age":31}';
+     var userJSON = JSON.parse(userString);
+     console.log(userJSON); // {name: "John", age: 31}
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+115. ### Why do you need JSON
+
+     When exchanging data between a browser and a server, the data can only be text. Since JSON is text only, it can easily be sent to and from a server, and used as a data format by any programming language.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+116. ### What are PWAs
+
+     Progressive web applications (PWAs) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and JavaScript. These PWAs are deployed to servers, accessible through URLs, and indexed by search engines.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
