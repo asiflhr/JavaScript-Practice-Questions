@@ -2578,3 +2578,87 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+133. ### How do you check if a string starts with another string
+
+     You can use ECMAScript 6's `String.prototype.startsWith()` method to check if a string starts with another string or not. But it is not yet supported in all browsers. Let's see an example to see this usage,
+
+     ```javascript
+     "Good morning".startsWith("Good"); // true
+     "Good morning".startsWith("morning"); // false
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+134. ### How do you trim a string in javascript
+
+     JavaScript provided a trim method on string types to trim any whitespaces present at the beginning or ending of the string.
+
+     ```javascript
+     "  Hello World   ".trim(); //Hello World
+     ```
+
+     If your browser(<IE9) doesn't support this method then you can use below polyfill.
+
+     ```javascript
+     if (!String.prototype.trim) {
+       (function () {
+         // Make sure we trim BOM and NBSP
+         var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+         String.prototype.trim = function () {
+           return this.replace(rtrim, "");
+         };
+       })();
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+135. ### How do you add a key value pair in javascript
+
+     There are two possible solutions to add new properties to an object. Let's take a simple object to explain these solutions.
+
+     ```javascript
+     var object = {
+       key1: value1,
+       key2: value2,
+     };
+     ```
+
+     1. **Using dot notation:** This solution is useful when you know the name of the property
+
+     ```javascript
+     object.key3 = "value3";
+     ```
+
+     1. **Using square bracket notation:** This solution is useful when the name of the property is dynamically determined.
+
+     ```javascript
+     obj["key3"] = "value3";
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+136. ### Is the !-- notation represents a special operator
+
+     No,that's not a special operator. But it is a combination of 2 standard operators one after the other,
+
+     1. A logical not (!)
+     2. A prefix decrement (--)
+
+     At first, the value decremented by one and then tested to see if it is equal to zero or not for determining the truthy/falsy value.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+137. ### How do you assign default values to variables
+
+     You can use the logical or operator `||` in an assignment expression to provide a default value. The syntax looks like as below,
+
+     ```javascript
+     var a = b || c;
+     ```
+
+     As per the above expression, variable 'a 'will get the value of 'c' only if 'b' is falsy (if is null, false, undefined, 0, empty string, or NaN), otherwise 'a' will get the value of 'b'.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
