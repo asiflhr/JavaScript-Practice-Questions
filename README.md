@@ -1939,3 +1939,56 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+89. ### How do you find operating system details
+
+    The window.navigator object contains information about the visitor's browser OS details. Some of the OS properties are available under platform property,
+
+    ```javascript
+    console.log(navigator.platform);
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+90. ### What is the difference between document load and DOMContentLoaded events
+
+    The `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for assets(stylesheets, images, and subframes) to finish loading. Whereas The load event is fired when the whole page has loaded, including all dependent resources(stylesheets, images).
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+91. ### What is the difference between native, host and user objects
+
+    `Native objects` are objects that are part of the JavaScript language defined by the ECMAScript specification. For example, String, Math, RegExp, Object, Function etc core objects defined in the ECMAScript spec.
+    `Host objects` are objects provided by the browser or runtime environment (Node). For example, window, XmlHttpRequest, DOM nodes etc are considered as host objects.
+    `User objects` are objects defined in the javascript code. For example, User objects created for profile information.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+92. ### What are the tools or techniques used for debugging JavaScript code
+
+    You can use below tools or techniques for debugging javascript
+
+    1. Chrome Devtools
+    2. debugger statement
+    3. Good old console.log statement
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+93. ### What are the pros and cons of promises over callbacks
+
+    Below are the list of pros and cons of promises over callbacks,
+
+    **Pros:**
+
+    1. It avoids callback hell which is unreadable
+    2. Easy to write sequential asynchronous code with .then()
+    3. Easy to write parallel asynchronous code with Promise.all()
+    4. Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions)
+
+    **Cons:**
+
+    1. It makes little complex code
+    2. You need to load a polyfill if ES6 is not supported
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
