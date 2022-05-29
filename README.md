@@ -1873,4 +1873,69 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-    
+    82. ### What are the problems with global variables
+
+    The problem with global variables is the conflict of variable names of local and global scope. It is also difficult to debug and test the code that relies on global variables.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+83. ### What is NaN property
+
+    The NaN property is a global property that represents "Not-a-Number" value. i.e, It indicates that a value is not a legal number. It is very rare to use NaN in a program but it can be used as return value for few cases
+
+    ```javascript
+    Math.sqrt(-1);
+    parseInt("Hello");
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+84. ### What is the purpose of isFinite function
+
+    The isFinite() function is used to determine whether a number is a finite, legal number. It returns false if the value is +infinity, -infinity, or NaN (Not-a-Number), otherwise it returns true.
+
+    ```javascript
+    isFinite(Infinity); // false
+    isFinite(NaN); // false
+    isFinite(-Infinity); // false
+
+    isFinite(100); // true
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+85. ### What is an event flow
+
+    Event flow is the order in which event is received on the web page. When you click an element that is nested in various other elements, before your click actually reaches its destination, or target element, it must trigger the click event for each of its parent elements first, starting at the top with the global window object.
+    There are two ways of event flow
+
+    1. Top to Bottom(Event Capturing)
+    2. Bottom to Top (Event Bubbling)
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+86. ### What is event bubbling
+
+    Event bubbling is a type of event propagation where the event first triggers on the innermost target element, and then successively triggers on the ancestors (parents) of the target element in the same nesting hierarchy till it reaches the outermost DOM element.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+87. ### What is event capturing
+
+    Event capturing is a type of event propagation where the event is first captured by the outermost element, and then successively triggers on the descendants (children) of the target element in the same nesting hierarchy till it reaches the innermost DOM element.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+88. ### How do you submit a form using JavaScript
+
+    You can submit a form using `document.forms[0].submit()`. All the form input's information is submitted using onsubmit event handler
+
+    ```javascript
+    function submit() {
+      document.forms[0].submit();
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
