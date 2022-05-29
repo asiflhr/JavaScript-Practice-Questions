@@ -1719,3 +1719,44 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+71. ### What is the typeof operator
+
+    You can use the JavaScript typeof operator to find the type of a JavaScript variable. It returns the type of a variable or an expression.
+
+    ```javascript
+    typeof "John Abraham"; // Returns "string"
+    typeof (1 + 2); // Returns "number"
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+72. ### What is undefined property
+
+    The undefined property indicates that a variable has not been assigned a value, or not declared at all. The type of undefined value is undefined too.
+
+    ```javascript
+    var user; // Value is undefined, type is undefined
+    console.log(typeof user); //undefined
+    ```
+
+    Any variable can be emptied by setting the value to undefined.
+
+    ```javascript
+    user = undefined;
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+73. ### What is null value
+
+    The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values. The type of null value is object.
+    You can empty the variable by setting the value to null.
+
+    ```javascript
+    var user = null;
+    console.log(typeof user); //object
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
