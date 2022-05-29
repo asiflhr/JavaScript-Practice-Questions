@@ -2980,3 +2980,62 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+160. ### What is the purpose of exec method
+
+     The purpose of exec method is similar to test method but it executes a search for a match in a specified string and returns a result array, or null instead of returning true/false.
+
+     ```javascript
+     var pattern = /you/;
+     console.log(pattern.exec("How are you?")); //["you", index: 8, input: "How are you?", groups: undefined]
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+161. ### How do you change the style of a HTML element
+
+     You can change inline style or classname of a HTML element using javascript
+
+     1. **Using style property:** You can modify inline style using style property
+
+     ```javascript
+     document.getElementById("title").style.fontSize = "30px";
+     ```
+
+     1. **Using ClassName property:** It is easy to modify element class using className property
+
+     ```javascript
+     document.getElementById("title").className = "custom-title";
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+162. ### What would be the result of 1+2+'3'
+
+     The output is going to be `33`. Since `1` and `2` are numeric values, the result of the first two digits is going to be a numeric value `3`. The next digit is a string type value because of that the addition of numeric value `3` and string type value `3` is just going to be a concatenation value `33`.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+163. ### What is a debugger statement
+
+     The debugger statement invokes any available debugging functionality, such as setting a breakpoint. If no debugging functionality is available, this statement has no effect.
+     For example, in the below function a debugger statement has been inserted. So
+     execution is paused at the debugger statement just like a breakpoint in the script source.
+
+     ```javascript
+     function getProfile() {
+       // code goes here
+       debugger;
+       // code goes here
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+164. ### What is the purpose of breakpoints in debugging
+
+     You can set breakpoints in the javascript code once the debugger statement is executed and the debugger window pops up. At each breakpoint, javascript will stop executing, and let you examine the JavaScript values. After examining values, you can resume the execution of code using the play button.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
+
