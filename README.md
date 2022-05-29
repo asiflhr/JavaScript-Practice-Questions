@@ -1760,3 +1760,57 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+74. ### What is the difference between null and undefined
+
+    Below are the main differences between null and undefined,
+
+    | Null                                                                                            | Undefined                                                                                               |
+    | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+    | It is an assignment value which indicates that variable points to no object.                    | It is not an assignment value where a variable has been declared but has not yet been assigned a value. |
+    | Type of null is object                                                                          | Type of undefined is undefined                                                                          |
+    | The null value is a primitive value that represents the null, empty, or non-existent reference. | The undefined value is a primitive value used when a variable has not been assigned a value.            |
+    | Indicates the absence of a value for a variable                                                 | Indicates absence of variable itself                                                                    |
+    | Converted to zero (0) while performing primitive operations                                     | Converted to NaN while performing primitive operations                                                  |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+75. ### What is eval
+
+    The eval() function evaluates JavaScript code represented as a string. The string can be a JavaScript expression, variable, statement, or sequence of statements.
+
+    ```javascript
+    console.log(eval("1 + 2")); //  3
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+76. ### What is the difference between window and document
+
+    Below are the main differences between window and document,
+
+    | Window                                                                        | Document                                                                                      |
+    | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+    | It is the root level element in any web page                                  | It is the direct child of the window object. This is also known as Document Object Model(DOM) |
+    | By default window object is available implicitly in the page                  | You can access it via window.document or document.                                            |
+    | It has methods like alert(), confirm() and properties like document, location | It provides methods like getElementById, getElementsByTagName, createElement etc              |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+77. ### How do you access history in javascript
+
+    The window.history object contains the browser's history. You can load previous and next URLs in the history using back() and next() methods.
+
+    ```javascript
+    function goBack() {
+      window.history.back();
+    }
+    function goForward() {
+      window.history.forward();
+    }
+    ```
+
+    **Note:** You can also access history without window prefix.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
