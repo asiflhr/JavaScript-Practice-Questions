@@ -2463,3 +2463,118 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+127. ### How do you test for an empty object
+
+     There are different solutions based on ECMAScript versions
+
+     1. **Using Object entries(ECMA 7+):** You can use object entries length along with constructor type.
+
+     ```javascript
+     Object.entries(obj).length === 0 && obj.constructor === Object; // Since date object length is 0, you need to check constructor check as well
+     ```
+
+     1. **Using Object keys(ECMA 5+):** You can use object keys length along with constructor type.
+
+     ```javascript
+     Object.keys(obj).length === 0 && obj.constructor === Object; // Since date object length is 0, you need to check constructor check as well
+     ```
+
+     1. **Using for-in with hasOwnProperty(Pre-ECMA 5):** You can use a for-in loop along with hasOwnProperty.
+
+     ```javascript
+     function isEmpty(obj) {
+       for (var prop in obj) {
+         if (obj.hasOwnProperty(prop)) {
+           return false;
+         }
+       }
+
+       return JSON.stringify(obj) === JSON.stringify({});
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+128. ### What is an arguments object
+
+     The arguments object is an Array-like object accessible inside functions that contains the values of the arguments passed to that function. For example, let's see how to use arguments object inside sum function,
+
+     ```javascript
+     function sum() {
+       var total = 0;
+       for (var i = 0, len = arguments.length; i < len; ++i) {
+         total += arguments[i];
+       }
+       return total;
+     }
+
+     sum(1, 2, 3); // returns 6
+     ```
+
+     **Note:** You can't apply array methods on arguments object. But you can convert into a regular array as below.
+
+     ```javascript
+     var argsArray = Array.prototype.slice.call(arguments);
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+129. ### How do you make first letter of the string in an uppercase
+
+     You can create a function which uses a chain of string methods such as charAt, toUpperCase and slice methods to generate a string with the first letter in uppercase.
+
+     ```javascript
+     function capitalizeFirstLetter(string) {
+       return string.charAt(0).toUpperCase() + string.slice(1);
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+130. ### What are the pros and cons of for loop
+
+     The for-loop is a commonly used iteration syntax in javascript. It has both pros and cons
+
+     #### Pros
+
+     1. Works on every environment
+     2. You can use break and continue flow control statements
+
+     #### Cons
+
+     1. Too verbose
+     2. Imperative
+     3. You might face one-by-off errors
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+131. ### How do you display the current date in javascript
+
+     You can use `new Date()` to generate a new Date object containing the current date and time. For example, let's display the current date in mm/dd/yyyy
+
+     ```javascript
+     var today = new Date();
+     var dd = String(today.getDate()).padStart(2, "0");
+     var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+     var yyyy = today.getFullYear();
+
+     today = mm + "/" + dd + "/" + yyyy;
+     document.write(today);
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+132. ### How do you compare two date objects
+
+     You need to use date.getTime() method to compare date values instead of comparison operators (==, !=, ===, and !== operators)
+
+     ```javascript
+     var d1 = new Date();
+     var d2 = new Date(d1);
+     console.log(d1.getTime() === d2.getTime()); //True
+     console.log(d1 === d2); // False
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
