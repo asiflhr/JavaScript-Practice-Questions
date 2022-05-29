@@ -3512,3 +3512,77 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+195. ### What is the purpose of seal method
+
+     The **Object.seal()** method is used to seal an object, by preventing new properties from being added to it and marking all existing properties as non-configurable. But values of present properties can still be changed as long as they are writable. Let's see the below example to understand more about seal() method
+
+     ```javascript
+     const object = {
+       property: "Welcome JS world",
+     };
+     Object.seal(object);
+     object.property = "Welcome to object world";
+     console.log(Object.isSealed(object)); // true
+     delete object.property; // You cannot delete when sealed
+     console.log(object.property); //Welcome to object world
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+196. ### What are the applications of seal method
+
+     Below are the main applications of Object.seal() method,
+
+     1. It is used for sealing objects and arrays.
+     2. It is used to make an object immutable.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+197. ### What are the differences between freeze and seal methods
+
+     If an object is frozen using the Object.freeze() method then its properties become immutable and no changes can be made in them whereas if an object is sealed using the Object.seal() method then the changes can be made in the existing properties of the object.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+198. ### How do you determine if an object is sealed or not
+
+     The Object.isSealed() method is used to determine if an object is sealed or not. An object is sealed if all of the below conditions hold true
+
+     1. If it is not extensible.
+     2. If all of its properties are non-configurable.
+     3. If it is not removable (but not necessarily non-writable).
+        Let's see it in the action
+
+     ```javascript
+     const object = {
+       property: "Hello, Good morning",
+     };
+
+     Object.seal(object); // Using seal() method to seal the object
+
+     console.log(Object.isSealed(object)); // checking whether the object is sealed or not
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+199. ### How do you get enumerable key and value pairs
+
+     The Object.entries() method is used to return an array of a given object's own enumerable string-keyed property [key, value] pairs, in the same order as that provided by a for...in loop. Let's see the functionality of object.entries() method in an example,
+
+     ```javascript
+     const object = {
+       a: "Good morning",
+       b: 100,
+     };
+
+     for (let [key, value] of Object.entries(object)) {
+       console.log(`${key}: ${value}`); // a: 'Good morning'
+       // b: 100
+     }
+     ```
+
+     **Note:** The order is not guaranteed as object defined.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
