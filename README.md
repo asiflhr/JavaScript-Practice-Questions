@@ -1992,3 +1992,55 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+94. ### What is the difference between an attribute and a property
+
+    Attributes are defined on the HTML markup whereas properties are defined on the DOM. For example, the below HTML element has 2 attributes type and value,
+
+    ```javascript
+    <input type="text" value="Name:">
+    ```
+
+    You can retrieve the attribute value as below,
+
+    ```javascript
+    const input = document.querySelector("input");
+    console.log(input.getAttribute("value")); // Good morning
+    console.log(input.value); // Good morning
+    ```
+
+    And after you change the value of the text field to "Good evening", it becomes like
+
+    ```javascript
+    console.log(input.getAttribute("value")); // Good evening
+    console.log(input.value); // Good evening
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+95. ### What is same-origin policy
+
+    The same-origin policy is a policy that prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. If you enable this policy then it prevents a malicious script on one page from obtaining access to sensitive data on another web page using Document Object Model(DOM).
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+96. ### What is the purpose of void 0
+
+    Void(0) is used to prevent the page from refreshing. This will be helpful to eliminate the unwanted side-effect, because it will return the undefined primitive value. It is commonly used for HTML documents that use href="JavaScript:Void(0);" within an `<a>` element. i.e, when you click a link, the browser loads a new page or refreshes the same page. But this behavior will be prevented using this expression.
+    For example, the below link notify the message without reloading the page
+
+    ```javascript
+    <a href="JavaScript:void(0);" onclick="alert('Well done!')">
+      Click Me!
+    </a>
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+97. ### Is JavaScript a compiled or interpreted language
+
+    JavaScript is an interpreted language, not a compiled language. An interpreter in the browser reads over the JavaScript code, interprets each line, and runs it. Nowadays modern browsers use a technology known as Just-In-Time (JIT) compilation, which compiles JavaScript to executable bytecode just as it is about to run.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+    
