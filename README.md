@@ -1814,3 +1814,63 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+78. ### How do you detect caps lock key turned on or not
+
+    The `mouseEvent getModifierState()` is used to return a boolean value that indicates whether the specified modifier key is activated or not. The modifiers such as CapsLock, ScrollLock and NumLock are activated when they are clicked, and deactivated when they are clicked again.
+
+    Let's take an input element to detect the CapsLock on/off behavior with an example,
+
+    ```html
+    <input type="password" onmousedown="enterInput(event)" />
+
+    <p id="feedback"></p>
+
+    <script>
+      function enterInput(e) {
+        var flag = e.getModifierState("CapsLock");
+        if (flag) {
+          document.getElementById("feedback").innerHTML = "CapsLock activated";
+        } else {
+          document.getElementById("feedback").innerHTML =
+            "CapsLock not activated";
+        }
+      }
+    </script>
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+79. ### What is isNaN
+
+    The isNaN() function is used to determine whether a value is an illegal number (Not-a-Number) or not. i.e, This function returns true if the value equates to NaN. Otherwise it returns false.
+
+    ```javascript
+    isNaN("Hello"); //true
+    isNaN("100"); //false
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+80. ### What are the differences between undeclared and undefined variables
+
+    Below are the major differences between undeclared(not defined) and undefined variables,
+
+    | undeclared                                                                                  | undefined                                                                              |
+    | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+    | These variables do not exist in a program and are not declared                              | These variables declared in the program but have not assigned any value                |
+    | If you try to read the value of an undeclared variable, then a runtime error is encountered | If you try to read the value of an undefined variable, an undefined value is returned. |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+81. ### What are global variables
+
+    Global variables are those that are available throughout the length of the code without any scope. The var keyword is used to declare a local variable but if you omit it then it will become global variable
+
+    ```javascript
+    msg = "Hello"; // var is missing, it becomes global variable
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+    
