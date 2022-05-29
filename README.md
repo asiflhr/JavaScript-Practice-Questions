@@ -3448,3 +3448,67 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+192. ### How do you copy properties from one object to other
+
+     You can use the Object.assign() method which is used to copy the values and properties from one or more source objects to a target object. It returns the target object which has properties and values copied from the target object. The syntax would be as below,
+
+     ```javascript
+     Object.assign(target, ...sources);
+     ```
+
+     Let's take example with one source and one target object,
+
+     ```javascript
+     const target = { a: 1, b: 2 };
+     const source = { b: 3, c: 4 };
+
+     const returnedTarget = Object.assign(target, source);
+
+     console.log(target); // { a: 1, b: 3, c: 4 }
+
+     console.log(returnedTarget); // { a: 1, b: 3, c: 4 }
+     ```
+
+     As observed in the above code, there is a common property(`b`) from source to target so it's value has been overwritten.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+193. ### What are the applications of assign method
+
+     Below are the some of main applications of Object.assign() method,
+
+     1. It is used for cloning an object.
+     2. It is used to merge objects with the same properties.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+194. ### What is a proxy object
+
+     The Proxy object is used to define custom behavior for fundamental operations such as property lookup, assignment, enumeration, function invocation, etc. The syntax would be as follows,
+
+     ```javascript
+     var p = new Proxy(target, handler);
+     ```
+
+     Let's take an example of proxy object,
+
+     ```javascript
+     var handler = {
+       get: function (obj, prop) {
+         return prop in obj ? obj[prop] : 100;
+       },
+     };
+
+     var p = new Proxy({}, handler);
+     p.a = 10;
+     p.b = null;
+
+     console.log(p.a, p.b); // 10, null
+     console.log("c" in p, p.c); // false, 100
+     ```
+
+     In the above code, it uses `get` handler which define the behavior of the proxy when an operation is performed on it
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
