@@ -2043,4 +2043,90 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-    
+    98. ### Is JavaScript a case-sensitive language
+
+    Yes, JavaScript is a case sensitive language. The language keywords, variables, function & object names, and any other identifiers must always be typed with a consistent capitalization of letters.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+99. ### Is there any relation between Java and JavaScript
+
+    No, they are entirely two different programming languages and have nothing to do with each other. But both of them are Object Oriented Programming languages and like many other languages, they follow similar syntax for basic features(if, else, for, switch, break, continue etc).
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+100. ### What are events
+
+     Events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can `react` on these events. Some of the examples of HTML events are,
+
+     1. Web page has finished loading
+     2. Input field was changed
+     3. Button was clicked
+
+     Let's describe the behavior of click event for button element,
+
+     ```javascript
+     <!doctype html>
+     <html>
+      <head>
+        <script>
+          function greeting() {
+            alert('Hello! Good morning');
+          }
+        </script>
+      </head>
+      <body>
+        <button type="button" onclick="greeting()">Click me</button>
+      </body>
+     </html>
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+101. ### Who created javascript
+
+     JavaScript was created by Brendan Eich in 1995 during his time at Netscape Communications. Initially it was developed under the name `Mocha`, but later the language was officially called `LiveScript` when it first shipped in beta releases of Netscape.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+102. ### What is the use of preventDefault method
+
+     The preventDefault() method cancels the event if it is cancelable, meaning that the default action or behaviour that belongs to the event will not occur. For example, prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyperlink are some common use cases.
+
+     ```javascript
+     document
+       .getElementById("link")
+       .addEventListener("click", function (event) {
+         event.preventDefault();
+       });
+     ```
+
+     **Note:** Remember that not all events are cancelable.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+103. ### What is the use of stopPropagation method
+
+     The stopPropagation method is used to stop the event from bubbling up the event chain. For example, the below nested divs with stopPropagation method prevents default event propagation when clicking on nested div(Div1)
+
+     ```javascript
+     <p>Click DIV1 Element</p>
+     <div onclick="secondFunc()">DIV 2
+       <div onclick="firstFunc(event)">DIV 1</div>
+     </div>
+
+     <script>
+     function firstFunc(event) {
+       alert("DIV 1");
+       event.stopPropagation();
+     }
+
+     function secondFunc() {
+       alert("DIV 2");
+     }
+     </script>
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
