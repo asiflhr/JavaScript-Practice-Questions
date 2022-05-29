@@ -2354,3 +2354,56 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+121. ### How do you validate an email in javascript
+
+     You can validate an email in javascript using regular expressions. It is recommended to do validations on the server side instead of the client side. Because the javascript can be disabled on the client side.
+
+     ```javascript
+     function validateEmail(email) {
+       var re =
+         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+       return re.test(String(email).toLowerCase());
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+     The above regular expression accepts unicode characters.
+
+122. ### How do you get the current url with javascript
+
+     You can use `window.location.href` expression to get the current url path and you can use the same expression for updating the URL too. You can also use `document.URL` for read-only purposes but this solution has issues in FF.
+
+     ```javascript
+     console.log("location.href", window.location.href); // Returns full URL
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+123. ### What are the various url properties of location object
+
+     The below `Location` object properties can be used to access URL components of the page,
+
+     1. href - The entire URL
+     2. protocol - The protocol of the URL
+     3. host - The hostname and port of the URL
+     4. hostname - The hostname of the URL
+     5. port - The port number in the URL
+     6. pathname - The path name of the URL
+     7. search - The query portion of the URL
+     8. hash - The anchor portion of the URL
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+124. ### How do get query string values in javascript
+
+     You can use URLSearchParams to get query string values in javascript. Let's see an example to get the client code value from URL query string,
+
+     ```javascript
+     const urlParams = new URLSearchParams(window.location.search);
+     const clientCode = urlParams.get("clientCode");
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
