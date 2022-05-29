@@ -3111,3 +3111,111 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+169. ### How do you make synchronous HTTP request
+
+     Browsers provide an XMLHttpRequest object which can be used to make synchronous HTTP requests from JavaScript
+
+     ```javascript
+     function httpGet(theUrl) {
+       var xmlHttpReq = new XMLHttpRequest();
+       xmlHttpReq.open("GET", theUrl, false); // false for synchronous request
+       xmlHttpReq.send(null);
+       return xmlHttpReq.responseText;
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+170. ### How do you make asynchronous HTTP request
+
+     Browsers provide an XMLHttpRequest object which can be used to make asynchronous HTTP requests from JavaScript by passing the 3rd parameter as true.
+
+     ```javascript
+     function httpGetAsync(theUrl, callback) {
+       var xmlHttpReq = new XMLHttpRequest();
+       xmlHttpReq.onreadystatechange = function () {
+         if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200)
+           callback(xmlHttpReq.responseText);
+       };
+       xmlHttp.open("GET", theUrl, true); // true for asynchronous
+       xmlHttp.send(null);
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+171. ### How do you convert date to another timezone in javascript
+
+     You can use the toLocaleString() method to convert dates in one timezone to another. For example, let's convert current date to British English timezone as below,
+
+     ```javascript
+     console.log(event.toLocaleString("en-GB", { timeZone: "UTC" })); //29/06/2019, 09:56:00
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+172. ### What are the properties used to get size of window
+
+     You can use innerWidth, innerHeight, clientWidth, clientHeight properties of windows, document element and document body objects to find the size of a window. Let's use them combination of these properties to calculate the size of a window or document,
+
+     ```javascript
+     var width =
+       window.innerWidth ||
+       document.documentElement.clientWidth ||
+       document.body.clientWidth;
+
+     var height =
+       window.innerHeight ||
+       document.documentElement.clientHeight ||
+       document.body.clientHeight;
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+173. ### What is a conditional operator in javascript
+
+     The conditional (ternary) operator is the only JavaScript operator that takes three operands which acts as a shortcut for if statements.
+
+     ```javascript
+     var isAuthenticated = false;
+     console.log(
+       isAuthenticated ? "Hello, welcome" : "Sorry, you are not authenticated"
+     ); //Sorry, you are not authenticated
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+174. ### Can you apply chaining on conditional operator
+
+     Yes, you can apply chaining on conditional operators similar to if … else if … else if … else chain. The syntax is going to be as below,
+
+     ```javascript
+     function traceValue(someParam) {
+       return condition1
+         ? value1
+         : condition2
+         ? value2
+         : condition3
+         ? value3
+         : value4;
+     }
+
+     // The above conditional operator is equivalent to:
+
+     function traceValue(someParam) {
+       if (condition1) {
+         return value1;
+       } else if (condition2) {
+         return value2;
+       } else if (condition3) {
+         return value3;
+       } else {
+         return value4;
+       }
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
+     
