@@ -3218,4 +3218,90 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
-     
+     175. ### What are the ways to execute javascript after page load
+
+     You can execute javascript after page load in many different ways,
+
+     1. **window.onload:**
+
+     ```javascript
+     window.onload = function ...
+     ```
+
+     1. **document.onload:**
+
+     ```javascript
+     document.onload = function ...
+     ```
+
+     1. **body onload:**
+
+     ```javascript
+     <body onload="script();">
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+176. ### What is the difference between proto and prototype
+
+     The `__proto__` object is the actual object that is used in the lookup chain to resolve methods, etc. Whereas `prototype` is the object that is used to build `__proto__` when you create an object with new
+
+     ```javascript
+     new Employee().__proto__ === Employee.prototype;
+     new Employee().prototype === undefined;
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+177. ### Give an example where do you really need semicolon
+
+     It is recommended to use semicolons after every statement in JavaScript. For example, in the below case it throws an error ".. is not a function" at runtime due to missing semicolon.
+
+     ```javascript
+     // define a function
+     var fn = (function () {
+       //...
+     })(
+       // semicolon missing at this line
+
+       // then execute some code inside a closure
+       function () {
+         //...
+       }
+     )();
+     ```
+
+     and it will be interpreted as
+
+     ```javascript
+     var fn = (function () {
+       //...
+     })(function () {
+       //...
+     })();
+     ```
+
+     In this case, we are passing the second function as an argument to the first function and then trying to call the result of the first function call as a function. Hence, the second function will fail with a "... is not a function" error at runtime.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+178. ### What is a freeze method
+
+     The **freeze()** method is used to freeze an object. Freezing an object does not allow adding new properties to an object,prevents from removing and prevents changing the enumerability, configurability, or writability of existing properties. i.e, It returns the passed object and does not create a frozen copy.
+
+     ```javascript
+     const obj = {
+       prop: 100,
+     };
+
+     Object.freeze(obj);
+     obj.prop = 200; // Throws an error in strict mode
+
+     console.log(obj.prop); //100
+     ```
+
+     **Note:** It causes a TypeError if the argument passed is not an object.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
