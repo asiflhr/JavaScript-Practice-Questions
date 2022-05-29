@@ -2261,3 +2261,96 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
+117. ### What is the purpose of clearTimeout method
+
+     The clearTimeout() function is used in javascript to clear the timeout which has been set by setTimeout()function before that. i.e, The return value of setTimeout() function is stored in a variable and it’s passed into the clearTimeout() function to clear the timer.
+
+     For example, the below setTimeout method is used to display the message after 3 seconds. This timeout can be cleared by the clearTimeout() method.
+
+     ```javascript
+     <script>
+     var msg;
+     function greeting() {
+        alert('Good morning');
+     }
+     function start() {
+       msg =setTimeout(greeting, 3000);
+
+     }
+
+     function stop() {
+         clearTimeout(msg);
+     }
+     </script>
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+118. ### What is the purpose of clearInterval method
+
+     The clearInterval() function is used in javascript to clear the interval which has been set by setInterval() function. i.e, The return value returned by setInterval() function is stored in a variable and it’s passed into the clearInterval() function to clear the interval.
+
+     For example, the below setInterval method is used to display the message for every 3 seconds. This interval can be cleared by the clearInterval() method.
+
+     ```javascript
+     <script>
+     var msg;
+     function greeting() {
+        alert('Good morning');
+     }
+     function start() {
+       msg = setInterval(greeting, 3000);
+
+     }
+
+     function stop() {
+         clearInterval(msg);
+     }
+     </script>
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+119. ### How do you redirect new page in javascript
+
+     In vanilla javascript, you can redirect to a new page using the `location` property of window object. The syntax would be as follows,
+
+     ```javascript
+     function redirect() {
+       window.location.href = "newPage.html";
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+120. ### How do you check whether a string contains a substring
+
+     There are 3 possible ways to check whether a string contains a substring or not,
+
+     1. **Using includes:** ES6 provided `String.prototype.includes` method to test a string contains a substring
+
+     ```javascript
+     var mainString = "hello",
+       subString = "hell";
+     mainString.includes(subString);
+     ```
+
+     1. **Using indexOf:** In an ES5 or older environment, you can use `String.prototype.indexOf` which returns the index of a substring. If the index value is not equal to -1 then it means the substring exists in the main string.
+
+     ```javascript
+     var mainString = "hello",
+       subString = "hell";
+     mainString.indexOf(subString) !== -1;
+     ```
+
+     1. **Using RegEx:** The advanced solution is using Regular expression's test method(`RegExp.test`), which allows for testing for against regular expressions
+
+     ```javascript
+     var mainString = "hello",
+       regex = /hell/;
+     regex.test(mainString);
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+
